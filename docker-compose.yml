@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgresChat
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: chat_db
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
